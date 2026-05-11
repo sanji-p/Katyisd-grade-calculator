@@ -21,6 +21,13 @@ body {
   font-weight: 600;
 }
 
+.subtitle {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
 .container {
   width: 100%;
   max-width: 500px;
