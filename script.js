@@ -31,6 +31,25 @@ function showResult() {
     majorWeight = 0.50;
   }
 
+  if (type === "final") {
+  let six1 = Number(document.querySelector("#six1").value);
+  let six2 = Number(document.querySelector("#six2").value);
+  let six3 = Number(document.querySelector("#six3").value);
+  let exam = Number(document.querySelector("#exam").value);
+
+  let sixWeeksAvg = (six1 + six2 + six3) / 3;
+
+  let finalGrade =
+    (sixWeeksAvg * 0.85) +
+    (exam * 0.15);
+
+  document.querySelector("#popupResult").innerText =
+    finalGrade.toFixed(2) + "%";
+
+  document.querySelector("#popup").classList.add("show");
+  return;
+}
+
   let finalGrade = (otherAvg * otherWeight) + (minorAvg * minorWeight) + (majorAvg * majorWeight);
 
   document.querySelector("#popupResult").innerText = finalGrade.toFixed(2) + "%";
@@ -49,6 +68,21 @@ function findAverage(arr) {
     return 0;
   } else {
     return total / arr.length;
+  }
+}
+
+function toggleInputs() {
+  let type = document.querySelector("#classType").value;
+
+  let regularInputs = document.querySelector("#regularInputs");
+  let finalInputs = document.querySelector("#finalInputs");
+
+  if (type === "final") {
+    regularInputs.style.display = "none";
+    finalInputs.style.display = "block";
+  } else {
+    regularInputs.style.display = "block";
+    finalInputs.style.display = "none";
   }
 }
 

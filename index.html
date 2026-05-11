@@ -17,15 +17,28 @@
     <div class="content">
       <h1 class="title">Katy Grade Calculator</h1>
       <div class="right_side">
-        <label>Class Type</label>
-        <select id="classType">
-        <option value="kap">KAP</option>
-        <option value="ap">AP</option>
-        <option value="aca">ACA</option>
+      <label>Class Type</label>
+
+        <select id="classType" onchange="toggleInputs()">
+          <option value="kap">KAP</option>
+          <option value="ap">AP</option>
+          <option value="aca">ACA</option>
+          <option value="final">Finals</option>
         </select>
-        <input type="text" id="other" placeholder="Other Grades">
-        <input type="text" id="minor" placeholder="Minor Grades">
-        <input type="text" id="major" placeholder="Major Grades">
+
+        <div id="regularInputs">
+          <input type="text" id="other" placeholder="Other Grades">
+          <input type="text" id="minor" placeholder="Minor Grades">
+          <input type="text" id="major" placeholder="Major Grades">
+        </div>
+
+        <div id="finalInputs" style="display:none;">
+          <input type="number" id="six1" placeholder="1st Six Weeks Grade">
+          <input type="number" id="six2" placeholder="2nd Six Weeks Grade">
+          <input type="number" id="six3" placeholder="3rd Six Weeks Grade">
+          <input type="number" id="exam" placeholder="Final Exam Grade">
+        </div>
+
         <button type="button" onclick="showResult()">Calculate</button>
       </div>
     </div>
